@@ -1,0 +1,232 @@
+---
+# ─────────────────────────────────────────────────────────────────────
+#  Research Internship · 논문 목록   https://lenyemu.github.io/internship/
+#
+#  아래 weeks 목록만 고치면 사이트의 표가 바뀝니다.
+#  GitHub에서 이 파일의 연필 아이콘(Edit) → 수정 → Commit changes 를 누르면
+#  1~2분 뒤 사이트에 반영됩니다. 진행 상황은 저장소의 Actions 탭에서 확인합니다.
+#
+#  - week: "1주차"                  # 묶음 제목 (자유롭게: "1주차", "기초", "11월" 등)
+#    topic: "주제 설명"              # 선택
+#    papers:
+#      - title: "논문 제목"
+#        authors: "First Author et al."
+#        venue: "NeurIPS 2017"       # 학회/저널 + 연도 (선택)
+#        url: "https://arxiv.org/abs/xxxx.xxxxx"
+#        required: true              # true = 필수, false = 선택
+#        presenter: "홍길동"         # 발표 담당 (선택)
+#        memo: "3절까지 꼼꼼히"      # 메모 (선택)
+#
+#  ⚠️ 공개 사이트입니다. 미발표 연구 내용이나 논문 PDF는 올리지 말고 링크로 공유하세요.
+#  ⚠️ 들여쓰기는 스페이스 2칸입니다 (탭 문자 금지). 제목에 : 가 있으면 큰따옴표로 감싸세요.
+# ─────────────────────────────────────────────────────────────────────
+layout: null
+
+weeks:
+  - week: "1주차"
+    topic: "기본기 다지기 (예시)"
+    papers:
+      - title: "Attention Is All You Need"
+        authors: "Vaswani et al."
+        venue: "NeurIPS 2017"
+        url: "https://arxiv.org/abs/1706.03762"
+        required: true
+        presenter: "미정"
+        memo: "예시 항목입니다"
+      - title: "Deep Residual Learning for Image Recognition"
+        authors: "He et al."
+        venue: "CVPR 2016"
+        url: "https://arxiv.org/abs/1512.03385"
+        required: false
+
+  - week: "2주차"
+    topic: "최적화 (예시)"
+    papers:
+      - title: "Adam: A Method for Stochastic Optimization"
+        authors: "Kingma & Ba"
+        venue: "ICLR 2015"
+        url: "https://arxiv.org/abs/1412.6980"
+        required: true
+---
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>논문 | Research Internship</title>
+  <meta name="description" content="연구 인턴십에서 읽을 논문 목록">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%232f5d8c'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='7' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M60 44C50 37 38 35 26 37V83C38 81 50 83 60 90C70 83 82 81 94 83V37C82 35 70 37 60 44Z'/%3E%3Cpath d='M60 44V90'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --sidebar-bg: #f6f8fa;
+      --text: #34343c;
+      --heading: #2a2a33;
+      --muted: #6c757d;
+      --border: rgba(0, 0, 0, 0.1);
+      --row-alt: #fbfcfd;
+      --link: #0056b2;
+      --active-bg: rgba(0, 86, 178, 0.08);
+      --required: #d63344;
+      --required-bg: rgba(220, 53, 69, 0.12);
+      --optional-bg: rgba(108, 117, 125, 0.15);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1b1e;
+        --sidebar-bg: #1e1e22;
+        --text: #afb0b1;
+        --heading: #cccccc;
+        --muted: #868686;
+        --border: rgba(255, 255, 255, 0.1);
+        --row-alt: #202024;
+        --link: #8ab4f8;
+        --active-bg: rgba(138, 180, 248, 0.12);
+        --required: #ff7b88;
+        --required-bg: rgba(255, 123, 136, 0.15);
+        --optional-bg: rgba(255, 255, 255, 0.1);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* 사이드바 */
+    aside {
+      flex: 0 0 260px;
+      padding: 3rem 1.5rem;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .avatar { width: 112px; height: 112px; border-radius: 50%; display: block; margin: 0 0 1.5rem 0.5rem; }
+    .site-title { margin: 0 0 0 0.5rem; font-size: 1.75rem; line-height: 1.25; font-weight: 800; color: var(--muted); }
+    .tagline { margin: 0.5rem 0 2.5rem 0.5rem; font-style: italic; color: var(--muted); }
+    nav a {
+      display: block;
+      padding: 0.6rem 1rem;
+      border-radius: 0.6rem;
+      background: var(--active-bg);
+      color: var(--heading);
+      font-weight: 600;
+    }
+    nav a:hover { text-decoration: none; }
+    .nav-icon {
+      width: 1.1em; height: 1.1em; margin-right: 0.8rem; vertical-align: -0.15em;
+      fill: none; stroke: currentColor; stroke-width: 8; stroke-linejoin: round;
+    }
+    .repo { margin: auto 0 0 0.5rem; color: var(--muted); display: inline-flex; }
+    .repo:hover { color: var(--heading); }
+
+    /* 본문 */
+    main { flex: 1; min-width: 0; max-width: 64rem; padding: 3rem 3rem 4rem; }
+    h1 { margin: 0 0 1rem; font-size: 2.25rem; color: var(--heading); }
+    h2 { margin: 2.5rem 0 1rem; font-size: 1.5rem; color: var(--heading); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 34rem; border-collapse: collapse; }
+    th, td { padding: 0.6rem 1rem; text-align: left; vertical-align: middle; }
+    th { border-bottom: 2px solid var(--border); color: var(--heading); white-space: nowrap; }
+    td { border-bottom: 1px solid var(--border); }
+    tbody tr:nth-child(odd) { background: var(--row-alt); }
+    td small { color: var(--muted); }
+    .nowrap { white-space: nowrap; }
+    .col-type { width: 5rem; }
+    .col-presenter { width: 6rem; }
+    .col-memo { width: 28%; }
+    .badge {
+      display: inline-block;
+      padding: 0.1em 0.65em;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--optional-bg);
+    }
+    .badge.required { color: var(--required); background: var(--required-bg); }
+
+    /* 좁은 화면: 사이드바를 위쪽 머리글로 */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      aside {
+        flex: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .avatar { width: 40px; height: 40px; margin: 0; }
+      .site-title { margin: 0; font-size: 1.2rem; }
+      .tagline { display: none; }
+      nav { order: 3; flex-basis: 100%; }
+      nav a { padding: 0.4rem 0.8rem; display: inline-block; }
+      .repo { margin: 0 0 0 auto; }
+      main { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.25rem; margin-top: 2rem; }
+      th, td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <svg class="avatar" viewBox="0 0 120 120" aria-hidden="true">
+      <rect width="120" height="120" fill="#2f5d8c"/>
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M60 44C50 37 38 35 26 37V83C38 81 50 83 60 90C70 83 82 81 94 83V37C82 35 70 37 60 44Z"/>
+        <path d="M60 44V90"/>
+      </g>
+    </svg>
+    <p class="site-title">Research Internship</p>
+    <p class="tagline">논문 목록</p>
+    <nav aria-label="메뉴">
+      <a href="./" aria-current="page"><svg class="nav-icon" viewBox="26 30 68 66" aria-hidden="true"><path d="M60 44C50 37 38 35 26 37V83C38 81 50 83 60 90C70 83 82 81 94 83V37C82 35 70 37 60 44ZM60 44V90"/></svg>논문</a>
+    </nav>
+    <a class="repo" href="https://github.com/lenyemu/internship" target="_blank" rel="noopener" aria-label="GitHub 저장소">
+      <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+  </aside>
+
+  <main>
+    <h1>논문</h1>
+    <p><strong>필수</strong> 논문은 해당 주차 미팅 전까지 읽어 와 주세요.</p>
+{% for group in page.weeks %}
+    <h2>{{ group.week }}{% if group.topic %} · {{ group.topic }}{% endif %}</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>논문</th><th class="col-type">구분</th><th class="col-presenter">발표</th><th class="col-memo">메모</th></tr>
+        </thead>
+        <tbody>
+{%- for p in group.papers %}
+          <tr>
+            <td>
+              {%- if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
+              {%- if p.authors or p.venue %}<br><small>{{ p.authors }}{% if p.authors and p.venue %} · {% endif %}{{ p.venue }}</small>{% endif -%}
+            </td>
+            <td class="nowrap">{% if p.required %}<span class="badge required">필수</span>{% else %}<span class="badge">선택</span>{% endif %}</td>
+            <td class="nowrap">{{ p.presenter | default: '-' }}</td>
+            <td>{{ p.memo }}</td>
+          </tr>
+{%- endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endfor %}
+  </main>
+</body>
+</html>
