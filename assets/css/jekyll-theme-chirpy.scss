@@ -31,7 +31,7 @@ table.reading-list {
     white-space: nowrap;
   }
 
-  /* 주차별 표의 열 너비를 맞춤: 구분 · 발표 · 정리 글 · 메모 */
+  /* 주차별 표의 열 너비를 맞춤: 구분 · 발표 · 메모 */
   th:nth-child(2) {
     width: 5rem;
   }
@@ -41,11 +41,7 @@ table.reading-list {
   }
 
   th:nth-child(4) {
-    width: 5.5rem;
-  }
-
-  th:nth-child(5) {
-    width: 22%;
+    width: 25%;
   }
 }
 

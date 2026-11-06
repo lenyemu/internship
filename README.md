@@ -9,27 +9,22 @@
 
 > ⚠️ 이 사이트는 공개 웹사이트입니다. 미발표 연구 내용, 데이터, 개인정보, 논문 PDF는 올리지 마세요.
 
-## 무엇을 어디서 고치나요?
+## 논문 목록 고치는 법
+
+1. [`_data/papers.yml`](_data/papers.yml) 을 열고 연필 아이콘(Edit)을 누릅니다.
+2. 파일 맨 위 설명대로 논문을 추가하거나 고칩니다. 들여쓰기는 **스페이스 2칸**이며, 탭 문자는 쓰면 안 됩니다.
+3. **Commit changes** 를 누르면 1~2분 뒤 사이트에 반영됩니다.
+
+진행 상황은 [Actions](https://github.com/lenyemu/internship/actions) 탭에서 볼 수 있습니다 (초록 체크 = 반영 완료, 빨간 X = 오류).
+빨간 X가 뜨면 그 항목을 눌러 오류 메시지를 확인하세요. 흔한 원인은 YAML 들여쓰기 실수, 또는 제목에 `:` 가 들어갔는데 큰따옴표로 감싸지 않은 경우입니다.
+
+## 그 밖에 고칠 곳
 
 | 하고 싶은 일 | 고칠 곳 |
 |---|---|
-| 논문 목록 추가 · 수정 | [`_data/papers.yml`](_data/papers.yml) |
-| 미팅 기록 쓰기 | [`_templates/meeting.md`](_templates/meeting.md) 복사 → `_posts/YYYY-MM-DD-제목.md` |
-| 이론 · 테크닉 노트 쓰기 | [`_templates/note.md`](_templates/note.md) 복사 → `_posts/YYYY-MM-DD-제목.md` |
-| 논문 정리 글 쓰기 | [`_templates/paper.md`](_templates/paper.md) 복사 → `_posts/YYYY-MM-DD-제목.md` |
-| 미팅 발표 자료 올리기 | [`assets/files/meetings/`](assets/files/meetings/) 에 업로드 |
-| 글에 넣을 이미지 올리기 | [`assets/img/posts/`](assets/img/posts/) 에 업로드 |
-| 글쓴이 등록 | [`_data/authors.yml`](_data/authors.yml) |
-| 사이트 제목 · 설정 | [`_config.yml`](_config.yml) |
-
-> 지금은 사이드바에 **논문** 메뉴 하나만 있고, 사이트 첫 화면이 곧 논문 목록입니다.
-> 미팅 기록 · 노트 글은 써 둘 수 있지만 메뉴에는 나오지 않습니다 (글 주소로는 열립니다).
-> 논문 정리 글은 논문 표의 "정리 글" 칸에서 연결됩니다.
-
-자세한 사용법은 사이트의 두 글을 참고하세요.
-
-- [인턴십 블로그 사용 안내](https://lenyemu.github.io/internship/posts/welcome/): 글 쓰기, 파일 올리기, 오류 해결
-- [글쓰기 문법 정리](https://lenyemu.github.io/internship/posts/writing-guide/): 마크다운, 수식, 코드, 이미지 · 파일 첨부
+| 사이트 제목 · 부제 · 설정 | [`_config.yml`](_config.yml) |
+| 첫 화면 안내 문구 · 표 모양 | [`_tabs/papers.md`](_tabs/papers.md) |
+| 사이드바 아래 아이콘 링크 | [`_data/contact.yml`](_data/contact.yml) |
 
 ## 폴더 구조
 
@@ -38,35 +33,19 @@
 ├── _config.yml            # 사이트 설정 (제목, 주소, 언어 등)
 ├── _data/
 │   ├── papers.yml         # 논문 목록 → 첫 화면("논문")의 표
-│   ├── authors.yml        # 글쓴이 목록
 │   ├── contact.yml        # 사이드바 아이콘 링크
 │   └── locales/ko-KR.yml  # 테마 한국어 문구 일부 수정
 ├── _includes/sidebar.html # 테마 사이드바 수정본 ('홈' 메뉴 제거)
-├── _posts/                # 모든 글 (미팅 · 노트 · 논문 정리 · 공지)
-├── _tabs/                 # 사이드바 메뉴 페이지 (지금은 papers.md = 논문 하나)
-├── _templates/            # 새 글 템플릿 (사이트에는 표시되지 않음)
+├── _tabs/papers.md        # 사이트 첫 화면이자 유일한 메뉴 ("논문")
 ├── assets/
-│   ├── files/meetings/    # 미팅 자료 파일
-│   ├── img/posts/         # 글에 넣는 이미지
+│   ├── img/avatar.svg     # 사이드바 로고
 │   └── css/               # 추가 스타일
 └── .github/workflows/     # 자동 빌드 · 배포 설정
 ```
 
-## 카테고리 규칙
-
-글 머리말의 `categories` 첫 번째 값으로 글을 분류합니다.
-
-| 카테고리 | 용도 |
-|---|---|
-| `Meetings` | 미팅 기록 |
-| `Notes` | 이론 · 테크닉 노트 (두 번째 값이 주제. 예: `[Notes, 선형대수]`) |
-| `Papers` | 논문 정리 글 (논문 표의 "정리 글" 칸에서 연결) |
-| `Notice` | 공지 |
-
 ## 내 컴퓨터에서 미리 보기 (선택)
 
-GitHub 웹에서만 작업해도 됩니다. 글을 많이 쓴다면 로컬에서 미리 볼 수 있습니다.
-Ruby 3.x와 Bundler가 있어야 합니다.
+GitHub 웹에서만 작업해도 됩니다. 로컬에서 미리 보려면 Ruby 3.x와 Bundler가 있어야 합니다.
 
 ```bash
 bundle install

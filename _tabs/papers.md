@@ -19,7 +19,6 @@ permalink: /
       <th>논문</th>
       <th>구분</th>
       <th>발표</th>
-      <th>정리 글</th>
       <th>메모</th>
     </tr>
   </thead>
@@ -44,17 +43,6 @@ permalink: /
         {%- endif -%}
       </td>
       <td class="nowrap">{{ p.presenter | default: '-' }}</td>
-      <td class="nowrap">
-        {%- assign summary = nil -%}
-        {%- if p.post -%}
-          {%- assign summary = site.posts | where: 'slug', p.post | first -%}
-        {%- endif -%}
-        {%- if summary -%}
-          <a href="{{ summary.url | relative_url }}">보기</a>
-        {%- else -%}
-          -
-        {%- endif -%}
-      </td>
       <td>{{ p.memo | default: '' }}</td>
     </tr>
   {%- endfor %}

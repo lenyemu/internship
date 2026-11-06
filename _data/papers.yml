@@ -12,8 +12,6 @@
 #        url: "https://arxiv.org/abs/xxxx.xxxxx"   # arXiv / DOI / 학회 페이지 링크
 #        required: true              # true = 필수, false = 선택
 #        presenter: "홍길동"         # 발표 담당 (선택)
-#        post: "paper-slug"          # 정리 글 파일 이름에서 날짜와 .md를 뺀 부분 (선택)
-#                                    #   예: _posts/2026-11-20-attention.md → "attention"
 #        memo: "3절까지 꼼꼼히"      # 메모 (선택)
 #
 #  ⚠️ 저작권 때문에 논문 PDF 파일을 저장소에 직접 올리지 말고, 링크로 공유해 주세요.
