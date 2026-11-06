@@ -2,12 +2,11 @@
 # ─────────────────────────────────────────────────────────────────────
 #  Research Internship · 논문 목록   https://lenyemu.github.io/internship/
 #
-#  아래 weeks 목록만 고치면 사이트의 표가 바뀝니다.
+#  아래 topics 목록만 고치면 사이트의 표가 바뀝니다. 논문은 주제별로 묶여 표시됩니다.
 #  GitHub에서 이 파일의 연필 아이콘(Edit) → 수정 → Commit changes 를 누르면
 #  1~2분 뒤 사이트에 반영됩니다. 진행 상황은 저장소의 Actions 탭에서 확인합니다.
 #
-#  - week: "1주차"                  # 묶음 제목 (자유롭게: "1주차", "기초", "11월" 등)
-#    topic: "주제 설명"              # 선택
+#  - topic: "주제 이름"             # 묶음 제목 (예: "Transformer", "최적화", "강화학습")
 #    papers:
 #      - title: "논문 제목"
 #        authors: "First Author et al."
@@ -22,9 +21,8 @@
 # ─────────────────────────────────────────────────────────────────────
 layout: null
 
-weeks:
-  - week: "1주차"
-    topic: "기본기 다지기 (예시)"
+topics:
+  - topic: "아키텍처 (예시)"
     papers:
       - title: "Attention Is All You Need"
         authors: "Vaswani et al."
@@ -39,8 +37,7 @@ weeks:
         url: "https://arxiv.org/abs/1512.03385"
         required: false
 
-  - week: "2주차"
-    topic: "최적화 (예시)"
+  - topic: "최적화 (예시)"
     papers:
       - title: "Adam: A Method for Stochastic Optimization"
         authors: "Kingma & Ba"
@@ -203,9 +200,9 @@ weeks:
 
   <main>
     <h1>논문</h1>
-    <p><strong>필수</strong> 논문은 해당 주차 미팅 전까지 읽어 와 주세요.</p>
-{% for group in page.weeks %}
-    <h2>{{ group.week }}{% if group.topic %} · {{ group.topic }}{% endif %}</h2>
+    <p><strong>필수</strong> 논문은 미팅 전까지 읽어 와 주세요.</p>
+{% for group in page.topics %}
+    <h2>{{ group.topic }}</h2>
     <div class="table-wrap">
       <table>
         <thead>
