@@ -1,7 +1,7 @@
 ---
 layout: null
 topics:
-  - topic: "Basic receiver structure (LO-free)"
+  - topic: "1. Basic receiver structure (LO-free)"
     papers:
       - title: "Broadband Rydberg Atom-Based Electric-Field Probe for SI-Traceable, Self-Calibrated Measurements"
         authors: "Holloway et al."
@@ -10,12 +10,12 @@ topics:
         required: False
         memo: "Local oscillator가 없는 기초 수신기 구조"
 
-  - topic: "Superheterodyne receiver (LO-dressed)"
+  - topic: "2. Superheterodyne receiver (LO-dressed)"
     papers:
       - title: "A Rydberg atom-based mixer: Measuring the phase of a radio frequency wave"
         authors: "Simons et al."
         venue: "Applied Physics Letters 2019"
-        url: "https://pubs.aip.org/aip/apl/article/114/11/114101/36735"
+        url: "https://pubs.aip.org/aip/apl/article/114/11/114101/36735/"
         required: True
         memo: "Local oscillator을 이용한 선형 검출 + phase measurement 기본 구조 제시"
       - title: "Atomic superheterodyne receiver based on microwave-dressed Rydberg spectroscopy"
@@ -30,15 +30,40 @@ topics:
         url: "https://ieeexplore.ieee.org/document/8778739/"
         required: False
         memo: "BPSK~64QAM 실제 수신 실험"
-    
-  - topic: "Superheterodyne receiver (LO-dressed)"
+
+  - topic: "3. Quasi-static model (steady-state)"
     papers:
       - title: "Harnessing Rydberg Atomic Receivers: From Quantum Physics to Wireless Communications"
         authors: "Chen et al."
         venue: "IEEE TWC 2026"
-        url: "https://ieeexplore.ieee.org/abstract/document/11568941"
+        url: "https://ieeexplore.ieee.org/document/11568941"
         required: True
         memo: "기존 Rydberg receiver 연구들을 통신공학 맥락에 맞게 풀어 쓴 논문"
+
+  - topic: "4. Small-signal model (transient-state)"
+    papers:
+      - title: "General Signal Model and Capacity Limit for Rydberg Quantum Information System"
+        authors: "Zhu and Dai."
+        venue: "IEEE TWC 2026"
+        url: "https://ieeexplore.ieee.org/document/11278503/"
+        required: True
+        memo: "Lindblad master equation에서 transfer function으로 유도"
+    papers:
+      - title: "Response Analysis of Four-Level Heterodyne Rydberg Atom Receiver"
+        authors: "Tang et al."
+        venue: "IEEE TAP 2026"
+        url: "https://ieeexplore.ieee.org/document/11361359"
+        required: False
+        memo: "Weak signal에 대한 transfer function을 closed form으로 정리"
+
+  - topic: "5. Nonlinear response model [experimental result]"
+    papers:
+      - title: "Nonlinearities in Atomic Radio Receivers: Harmonic and Intermodulation Distortion"
+        authors: "Gonçalves et al."
+        venue: "APS Open Science 2026"
+        url: "https://journals.aps.org/apsos/abstract/10.1103/3pht-dvg9"
+        required: True
+        memo: "Incident RF field의 세기가 커지면 nonlinearity가 드러남을 실험적으로 보인 논문"
 ---
 <!doctype html>
 <html lang="ko">
