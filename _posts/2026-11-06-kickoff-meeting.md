@@ -22,7 +22,7 @@ description: "인턴십 진행 방식 소개, 1주차 읽을 논문 배정"
 ## 발표 자료
 
 - [킥오프 미팅 자료 (PDF)]({% link assets/files/meetings/2026-11-06-kickoff-agenda.pdf %})
-- [1주차 읽을 논문 목록]({{ '/reading-list/' | relative_url }})
+- [1주차 읽을 논문 목록]({{ '/' | relative_url }})
 
 ## 논의 내용
 

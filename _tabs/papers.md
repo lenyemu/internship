@@ -1,14 +1,13 @@
 ---
-title: 읽을 논문
+# 사이트 첫 화면이자 사이드바의 유일한 메뉴입니다.
+# 표 내용은 _data/papers.yml 에서 수정합니다.
+title: 논문
 icon: fas fa-book-open
 order: 1
+permalink: /
 ---
 
-인턴십 기간 동안 읽을 논문 목록입니다. **필수** 논문은 해당 주차 미팅 전까지 읽어 와 주세요.
-
-> 목록은 저장소의 `_data/papers.yml`{: .filepath } 파일에서 수정합니다.
-> 논문 PDF는 저작권 문제로 직접 올리지 않고 링크로 공유합니다.
-{: .prompt-tip }
+**필수** 논문은 해당 주차 미팅 전까지 읽어 와 주세요.
 
 {% for group in site.data.papers %}
 
@@ -63,22 +62,3 @@ order: 1
 </table>
 
 {% endfor %}
-
-## 논문 정리 글
-
-{% assign paper_posts = site.categories['Papers'] %}
-{% if paper_posts and paper_posts.size > 0 %}
-<ul class="simple-post-list">
-  {%- for post in paper_posts %}
-  <li>
-    <span class="date text-muted">{{ post.date | date: '%Y-%m-%d' }}</span>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    {%- if post.description %}
-    <small class="text-muted d-block">{{ post.description }}</small>
-    {%- endif %}
-  </li>
-  {%- endfor %}
-</ul>
-{% else %}
-아직 정리 글이 없습니다. `_templates/paper.md`{: .filepath } 템플릿으로 첫 글을 써 보세요.
-{% endif %}

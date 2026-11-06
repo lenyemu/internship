@@ -4,7 +4,3 @@
 - type: repository
   icon: "fab fa-github"
   url: "https://github.com/lenyemu/internship" # 이 사이트의 GitHub 저장소
-
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true

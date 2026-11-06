@@ -69,44 +69,16 @@ table.reading-list {
   }
 }
 
-/* 미팅 · 노트 · 정리 글 목록 */
-ul.simple-post-list {
-  list-style: none;
-  padding-left: 0;
-
-  li {
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--main-border-color, rgba(0, 0, 0, 0.08));
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .date {
-    display: inline-block;
-    min-width: 6.5rem;
-    font-family: var(--bs-font-monospace, monospace);
-    font-size: 0.9rem;
-  }
-
-  small.d-block {
-    margin-left: 6.5rem;
-  }
+/* 간결한 화면: 오른쪽 패널의 '최근 업데이트 · 인기 태그'와 상단 검색창을 숨깁니다.
+   (요소를 지우면 테마 스크립트가 깨지므로 화면에서만 숨김) */
+#panel-wrapper .access,
+#search,
+#search-trigger {
+  display: none !important;
 }
 
 @media (max-width: 576px) {
   table.reading-list td.paper {
     min-width: 11rem;
-  }
-
-  ul.simple-post-list {
-    .date {
-      display: block;
-    }
-
-    small.d-block {
-      margin-left: 0;
-    }
   }
 }
