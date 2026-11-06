@@ -1,0 +1,13 @@
+# 테마의 한국어 문구(ko-KR) 중 일부만 바꿉니다.
+# 여기 없는 항목은 테마 기본값이 그대로 쓰입니다.
+
+tabs:
+  about: 안내
+
+copyright:
+  # 글 하단에 표시되던 CC BY 4.0 라이선스 문구를 표시하지 않습니다.
+  license:
+    template: ""
+  # 사이트 하단(footer)의 저작권 문구
+  brief: ""
+  verbose: ""

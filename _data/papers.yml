@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────
+#  읽을 논문 목록 (Reading List)
+#  이 파일만 고치면 사이트의 "읽을 논문" 페이지 표가 자동으로 바뀝니다.
+# ─────────────────────────────────────────────────────────────
+#
+#  - week: "1주차"                  # 묶음 제목 (자유롭게: "1주차", "기초", "11월" 등)
+#    topic: "주제 설명"              # 선택
+#    papers:
+#      - title: "논문 제목"
+#        authors: "First Author et al."
+#        venue: "NeurIPS 2017"       # 학회/저널 + 연도 (선택)
+#        url: "https://arxiv.org/abs/xxxx.xxxxx"   # arXiv / DOI / 학회 페이지 링크
+#        required: true              # true = 필수, false = 선택
+#        presenter: "홍길동"         # 발표 담당 (선택)
+#        post: "paper-slug"          # 정리 글 파일 이름에서 날짜와 .md를 뺀 부분 (선택)
+#                                    #   예: _posts/2026-11-20-attention.md → "attention"
+#        memo: "3절까지 꼼꼼히"      # 메모 (선택)
+#
+#  ⚠️ 저작권 때문에 논문 PDF 파일을 저장소에 직접 올리지 말고, 링크로 공유해 주세요.
+#  ⚠️ YAML은 들여쓰기(스페이스 2칸)가 중요합니다. 탭 문자는 쓰지 마세요.
+#
+#  아래는 형식을 보여주기 위한 예시입니다. 실제 목록으로 바꿔 주세요.
+
+- week: "1주차"
+  topic: "기본기 다지기 (예시)"
+  papers:
+    - title: "Attention Is All You Need"
+      authors: "Vaswani et al."
+      venue: "NeurIPS 2017"
+      url: "https://arxiv.org/abs/1706.03762"
+      required: true
+      presenter: "미정"
+      memo: "예시 항목입니다"
+    - title: "Deep Residual Learning for Image Recognition"
+      authors: "He et al."
+      venue: "CVPR 2016"
+      url: "https://arxiv.org/abs/1512.03385"
+      required: false
+
+- week: "2주차"
+  topic: "최적화 (예시)"
+  papers:
+    - title: "Adam: A Method for Stochastic Optimization"
+      authors: "Kingma & Ba"
+      venue: "ICLR 2015"
+      url: "https://arxiv.org/abs/1412.6980"
+      required: true
