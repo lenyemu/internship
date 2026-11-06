@@ -9,7 +9,6 @@ topics:
         venue: "NeurIPS 2017"
         url: "https://arxiv.org/abs/1706.03762"
         required: true
-        presenter: "미정"
         memo: "예시 항목입니다"
       - title: "Deep Residual Learning for Image Recognition"
         authors: "He et al."
@@ -120,7 +119,6 @@ topics:
     td small { color: var(--muted); }
     .nowrap { white-space: nowrap; }
     .col-type { width: 5rem; }
-    .col-presenter { width: 6rem; }
     .col-memo { width: 28%; }
     .badge {
       display: inline-block;
@@ -186,7 +184,7 @@ topics:
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>논문</th><th class="col-type">구분</th><th class="col-presenter">발표</th><th class="col-memo">메모</th></tr>
+          <tr><th>논문</th><th class="col-type">구분</th><th class="col-memo">메모</th></tr>
         </thead>
         <tbody>
 {%- for p in group.papers %}
@@ -196,7 +194,6 @@ topics:
               {%- if p.authors or p.venue %}<br><small>{{ p.authors }}{% if p.authors and p.venue %} · {% endif %}{{ p.venue }}</small>{% endif -%}
             </td>
             <td class="nowrap">{% if p.required %}<span class="badge required">필수</span>{% else %}<span class="badge">선택</span>{% endif %}</td>
-            <td class="nowrap">{{ p.presenter | default: '-' }}</td>
             <td>{{ p.memo }}</td>
           </tr>
 {%- endfor %}
